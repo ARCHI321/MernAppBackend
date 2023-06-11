@@ -1,10 +1,10 @@
 
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const app = express();
 
+const mongoose = require("mongoose");
 app.use(cors());
 
 const userRouter = require("./routes/userRoute");
@@ -12,7 +12,7 @@ const userRouter = require("./routes/userRoute");
 
 app.use(express.json());
 
-dotenv.config();
+// dotenv.config();
 
 mongoose.connect(process.env.URI).
 then(() => {
